@@ -11,3 +11,12 @@ export const decrement = () => {
         type: DECREMENT
     }
 }
+
+export const asyncIncrement = () => {
+    return function (dispatch) {
+        setTimeout(() => {
+            dispatch(increment())
+        }, 3000)
+
+    }
+}

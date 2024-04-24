@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
-import { decrement, increment } from './actions/counterAction';
+import { asyncIncrement, decrement, increment } from './actions/counterAction';
 import { toggleTheme } from './actions/themeActions';
 
 function App() {
@@ -19,9 +19,7 @@ function App() {
   };
 
   const handleAsync = () => {
-    // setTimeout(() => {
-    //   setCounter(counter + 1);
-    // }, 1000);
+    dispatch(asyncIncrement())
   };
   const switchTheme = () => {
     dispatch(toggleTheme())
