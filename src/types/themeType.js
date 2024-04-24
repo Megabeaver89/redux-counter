@@ -1,0 +1,1 @@
+export const THEME_SWITCHER = 'TOGGLE_THEME'

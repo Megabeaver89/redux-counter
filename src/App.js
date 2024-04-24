@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
-import { rootReducer } from './reducers/rootReducer';
+import { decrement, increment } from './actions/counterAction';
+import { toggleTheme } from './actions/themeActions';
 
 function App() {
   const dispatch = useDispatch()
@@ -10,11 +11,11 @@ function App() {
 
 
   const handleAdd = () => {
-    dispatch({ type: 'INCREMENT' })
+    dispatch(increment())
   };
 
   const handleSubtract = () => {
-    dispatch({ type: 'DECREMENT' })
+    dispatch(decrement())
   };
 
   const handleAsync = () => {
@@ -22,15 +23,15 @@ function App() {
     //   setCounter(counter + 1);
     // }, 1000);
   };
-  const toggleTheme = () => {
-    dispatch({ type: 'TOGGLE_THEME' })
+  const switchTheme = () => {
+    dispatch(toggleTheme())
   }
 
   return (
     <div className={`container ${isDarkTheme ? 'dark' : ''}`}>
       <h1 className="heading">
         <span>Redux</span>
-        <button className="btn btn-info" onClick={toggleTheme}>Сменить тему</button>
+        <button className="btn btn-info" onClick={switchTheme}>Сменить тему</button>
       </h1>
 
       <hr />
