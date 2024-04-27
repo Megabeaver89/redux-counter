@@ -1,4 +1,5 @@
 import { DECREMENT, INCREMENT } from "../types/counterType"
+import { disableBtn, enableBtn } from "./btnAction"
 
 export const increment = () => {
     return {
@@ -14,9 +15,10 @@ export const decrement = () => {
 
 export const asyncIncrement = () => {
     return function (dispatch) {
+        dispatch(disableBtn())
         setTimeout(() => {
             dispatch(increment())
+            dispatch(enableBtn())
         }, 3000)
-
     }
 }

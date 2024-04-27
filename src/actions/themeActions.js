@@ -1,7 +1,8 @@
-import { THEME_SWITCHER } from "../types/themeType"
+import { TOGGLE_THEME } from "../types/themeType"
 
-export const toggleTheme = () => {
+export const toggleTheme = (newTheme) => {
     return {
-        type: THEME_SWITCHER
+        type: TOGGLE_THEME,
+        payload: newTheme
     }
 }

@@ -1,17 +1,20 @@
-const initialState = {
-    isDarkTheme: false
+import { THEME_LIGHT } from "../constants/themeColor";
+import { TOGGLE_THEME } from "../types/themeType";
+
+const initialThemeState = {
+    value: THEME_LIGHT
 };
 
-const darkThemeReducer = (state = initialState, action) => {
+const themeReducer = (state = initialThemeState, action) => {
     switch (action.type) {
-        case 'TOGGLE_THEME':
+        case TOGGLE_THEME:
             return {
                 ...state,
-                isDarkTheme: !state.isDarkTheme
+                value: action.payload
             };
         default:
             return state;
     }
 };
 
-export default darkThemeReducer;
+export default themeReducer;
