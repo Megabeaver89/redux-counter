@@ -1,8 +1,8 @@
+import { createAction } from "@reduxjs/toolkit"
 import { TOGGLE_THEME } from "../types/themeType"
 
-export const toggleTheme = (newTheme) => {
+export const toggleTheme = createAction(TOGGLE_THEME, (newTheme) => {
     return {
-        type: TOGGLE_THEME,
         payload: newTheme
     }
-}
+})

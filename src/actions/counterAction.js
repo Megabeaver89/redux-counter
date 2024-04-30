@@ -1,17 +1,10 @@
+import { createAction } from "@reduxjs/toolkit"
 import { DECREMENT, INCREMENT } from "../types/counterType"
 import { disableBtn, enableBtn } from "./btnAction"
 
-export const increment = () => {
-    return {
-        type: INCREMENT
-    }
-}
+export const increment = createAction(INCREMENT)
 
-export const decrement = () => {
-    return {
-        type: DECREMENT
-    }
-}
+export const decrement = createAction(DECREMENT)
 
 export const asyncIncrement = () => {
     return function (dispatch) {
