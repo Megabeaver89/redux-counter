@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import counterReducer from './counterReducer';
-import themeReducer from './themeReducer';
-import btnReducer from './btnReducer';
+import counterSlice from '../slices/counterSlice';
+import themeSlice from '../slices/themeSlice';
+import btnSlice from '../slices/btnSlice';
 
 const rootReducer = combineReducers({
-    counter: counterReducer,
-    theme: themeReducer,
-    isDisabledBtn: btnReducer
+    counter: counterSlice,
+    theme: themeSlice,
+    isDisabledBtn: btnSlice
 });
 
 export default rootReducer;

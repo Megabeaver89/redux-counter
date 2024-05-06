@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
-import { asyncIncrement, decrement, increment } from './actions/counterAction';
-import { toggleTheme } from './actions/themeActions';
 import { THEME_DARK, THEME_LIGHT } from './constants/themeColor';
+import { asyncIncrementState, decrement, increment } from './slices/counterSlice';
+import { toggleTheme } from './slices/themeSlice';
 
 function App() {
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ function App() {
   };
 
   const handleAsync = () => {
-    dispatch(asyncIncrement())
+    dispatch(asyncIncrementState())
   };
   const changeTheme = () => {
     const newTheme = themeColor === THEME_LIGHT ? THEME_DARK : THEME_LIGHT
