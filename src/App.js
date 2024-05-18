@@ -3,6 +3,8 @@ import './index.css'
 import { THEME_DARK, THEME_LIGHT } from './constants/themeColor';
 import { asyncIncrementState, decrement, increment } from './slices/counterSlice';
 import { toggleTheme } from './slices/themeSlice';
+import TodoList from './components/todoList';
+import NewTodoForm from './components/newTodoForm';
 
 function App() {
   const dispatch = useDispatch()
@@ -44,6 +46,8 @@ function App() {
           <button className="btn btn-success" onClick={handleAsync} disabled={isDisableBtn}>Async</button>
         </div>
       </div>
+      <NewTodoForm />
+      <TodoList />
     </div>
   );
 }
